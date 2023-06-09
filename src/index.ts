@@ -44,10 +44,7 @@ export default class MulterGoogleCloudStorage implements multer.StorageEngine {
 			throw new Error('You have to specify credentials key file for Google Cloud Storage to work.');
 		}
 
-		this.gcobj = storage({
-			projectId: opts.projectId,
-			keyFilename: opts.keyFilename
-		});
+		this.gcobj = storage(opts);
 
 		this.gcsBucket = this.gcobj.bucket(opts.bucket);
 

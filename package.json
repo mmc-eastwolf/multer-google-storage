@@ -8,8 +8,6 @@
     "test": "npm run build && nyc --reporter=html --reporter=text mocha lib/index.test.js",
     "build": "npm run clean && tsc",
     "clean": "rimraf lib",
-    "precommit": "npm test",
-    "prepush": "npm test",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "commit": "git-cz"
   },
