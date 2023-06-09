@@ -40,7 +40,7 @@ export default class MulterGoogleCloudStorage implements multer.StorageEngine {
 			throw new Error('You have to specify project id for Google Cloud Storage to work.');
 		}
 
-		if (!opts.keyFilename) {
+		if (!(!opts.keyFilename && !opts.credentials)) {
 			throw new Error('You have to specify credentials key file for Google Cloud Storage to work.');
 		}
 
